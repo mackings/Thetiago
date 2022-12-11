@@ -16,13 +16,13 @@ class Tsignup extends ConsumerStatefulWidget {
 }
 
 class _TsignupState extends ConsumerState<Tsignup> {
-  String? email;
-  String? password;
+  dynamic email;
+  dynamic password;
 
   Future Signupuser() async {
     try {
       final Auth = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-          email: email.toString(), password: password.toString());
+          email: email, password: password.toString());
     } catch (e) {
       print(e);
     }
@@ -62,7 +62,7 @@ class _TsignupState extends ConsumerState<Tsignup> {
                             color: Colors.black,
                           ),
                         ),
-                        onSaved: (value) {
+                        onChanged: (value) {
                           setState(() {
                             email = value;
                             print(email);
@@ -96,7 +96,7 @@ class _TsignupState extends ConsumerState<Tsignup> {
                             color: Colors.black,
                           ),
                         ),
-                        onSaved: (value) {
+                        onChanged: (value) {
                           setState(() {
                             password = value;
                             print(password);
