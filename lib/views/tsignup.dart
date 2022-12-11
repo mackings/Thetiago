@@ -7,6 +7,7 @@ import 'package:riverpod/riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:thetiago/views/thome.dart';
 
 class Tsignup extends ConsumerStatefulWidget {
   const Tsignup({Key? key}) : super(key: key);
@@ -55,7 +56,7 @@ class _TsignupState extends ConsumerState<Tsignup> {
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: "Enter Emails",
+                          hintText: "Enter Emailss",
                           hintStyle: GoogleFonts.nunitoSans(),
                           suffixIcon: Icon(
                             Icons.email,
@@ -111,17 +112,19 @@ class _TsignupState extends ConsumerState<Tsignup> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      setState(() {
-                        loading = true;
-                      });
+                      // setState(() {
+                      //   loading = true;
+                      // });
 
-                      Signupuser().whenComplete(() => () {
-                            setState(() {
-                              loading = false;
-                            });
-                          });
+                      // Signupuser().whenComplete(() => () {
+                      //       setState(() {
+                      //         loading = false;
+                      //       });
+                      //     });
 
-                      Future.delayed(Duration(seconds: 2), () {});
+                      // Future.delayed(Duration(seconds: 2), () {});
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Thome()));
                     },
                     child: loading
                         ? CircularProgressIndicator()

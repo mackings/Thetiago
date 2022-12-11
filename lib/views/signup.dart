@@ -33,9 +33,11 @@ class _NsignupState extends ConsumerState<Nsignup> {
                       size: 190,
                       color: Colors.purple,
                     ),
+
                     SizedBox(
                       height: 19.h,
                     ),
+                    
                     Text(
                       "Create a free account",
                       style: GoogleFonts.poppins(
