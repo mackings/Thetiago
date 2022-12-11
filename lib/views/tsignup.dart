@@ -115,6 +115,12 @@ class _TsignupState extends ConsumerState<Tsignup> {
                         loading = true;
                       });
 
+                      Signupuser().whenComplete(() => () {
+                            setState(() {
+                              loading = false;
+                            });
+                          });
+
                       Future.delayed(Duration(seconds: 2), () {});
                     },
                     child: loading
